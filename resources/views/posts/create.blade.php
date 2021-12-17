@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-white""
+                    <label class="block mb-2 uppercase font-blod text-xs text-white"
                            for="slug"
                     >
                         lien dans le site
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-white""
+                    <label class="block mb-2 uppercase font-blod text-xs text-white"
                            for="image"
                     >
                         Image du jeu
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-white""
+                    <label class="block mb-2 uppercase font-bold text-xs text-white"
                            for="excerpt"
                     >
                         Présentation
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-white""
+                    <label class="block mb-2 uppercase font-bold text-xs text-white"
                            for="descritption"
                     >
                         Description
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-white""
+                    <label class="block mb-2 uppercase font-blod text-xs text-white"
                            for="category_id"
                     >
                         Catégorie
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-white""
+                    <label class="block mb-2 uppercase font-blod text-xs text-white"
                            for="link"
                     >
                         lien de téléchargement du jeu

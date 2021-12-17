@@ -62,7 +62,7 @@ class PostController extends Controller
 
     public function download(Post $post){
         if(auth()) {
-            if(UserDownloadGames::user($post) == false){
+            if(UserDownloadGames::user($post, auth()->user()) == false){
                 $post->update(['nbDownload' => $post->nbDownload + 1]);
 
                 UserDownloadGames::create([

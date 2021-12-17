@@ -1,6 +1,6 @@
 <x-layout>
     <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
+        <main class="py-8 max-w-md mx-auto border border-gray-200 p-6 rounded-xl text-white">
 
             <h1 class="text-center font-bold text-xl uppercase">Liste des utilisateurs</h1>
 

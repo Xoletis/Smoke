@@ -11,15 +11,12 @@ class UserDownloadGames extends Model
 
     protected $guarded = [];
 
-    public function user(Post $post){
-        $users = User::all();
+    public static function user(Post $post, User $user){
         $Downloads = UserDownloadGames::all();
-        foreach ($users as $user){
-            foreach ($Downloads as $download) {
-                if ($download->user_id == $user->id) {
-                    if($download->post_id == $post->id){
-                        return true;
-                    }
+        foreach ($Downloads as $download) {
+            if ($download->user_id == $user->id) {
+                if($download->post_id == $post->id){
+                    return true;
                 }
             }
         }

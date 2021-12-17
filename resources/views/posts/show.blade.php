@@ -90,11 +90,11 @@
                             <form method="POST" action="/posts/{{ $post->slug }}/comments" class="border border-gray-200 p-6 rounded-xl mb-6">
                                 @csrf
                                 <header>
-                                    <h2>Vous voulez participez ?</h2>
+                                    <h2 class="text-white">Vous voulez participez ?</h2>
                                 </header>
 
                                 <div class="mt-4">
-                                    <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Commentez"></textarea>
+                                    <textarea name="body" class="w-full text-sm focus:outline-none focus:ring text-white" style="background-color: #1a202c" rows="5" placeholder="Commentez"></textarea>
                                 </div>
 
                                 <div class="flex justify-end mt-10 border-t border-gray-200 pt-6">

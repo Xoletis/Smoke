@@ -11,7 +11,7 @@ class UserLikeGames extends Model
 
     protected $guarded = [];
 
-    public function userPost(Post $post, User $user){
+    public static function userPost(Post $post, User $user){
         $Likes = UserLikeGames::all();
         foreach ($Likes as $like) {
             if ($like->user_id == $user->id and $like->post_id == $post->id) {

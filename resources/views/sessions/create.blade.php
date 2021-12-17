@@ -1,6 +1,6 @@
 <x-layout>
     <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
+        <main class="py-8 max-w-md mx-auto border border-gray-200 p-6 rounded-xl">
 
             <h1 class="text-center font-bold text-xl">CONEXION !</h1>
             <div class="mt-10">
@@ -8,7 +8,7 @@
                     @csrf
 
                     <div class="mb-6">
-                        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                        <label class="block mb-2 uppercase font-bold text-xs text-white"
                                for="email"
                         >
                             E-mail
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                        <label class="block mb-2 uppercase font-bold text-xs text-white"
                                for="password"
                         >
                             Mot de passe
