@@ -70,11 +70,19 @@
                         {!! $post->title !!}
                     </h1>
 
-                    <form action="/download/{{$post->slug}}", method="POST">
-                        @method('PUT')
-                        @csrf
-                        <button type="submit" class="text-white">Lien de téléchargement</button>
-                    </form>
+                    @auth()
+                        <form action="/download/{{$post->slug}}", method="POST">
+                            @method('PUT')
+                            @csrf
+                            <button type="submit" class="text-white">Lien de téléchargement</button>
+                        </form>
+                    @else
+                        <form action="{{$post->link}}", method="POST">
+                            @method('PUT')
+                            @csrf
+                            <button type="submit" class="text-white">Lien de téléchargement</button>
+                        </form>
+                    @endauth
                     <br>
                     <br>
 
