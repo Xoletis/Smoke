@@ -54,6 +54,10 @@
     </div>
 
     {{ $slot }}
+
+    <br>
+
+    <div style="font-size: 0.6em; color: white">Par Soupape Corporation</div>
 </section>
 
 <x-flash />
