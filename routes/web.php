@@ -23,6 +23,11 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::delete('/post/{post:slug}', [PostController::class, 'delete']);
+Route::put('/post/{post:slug}/modify', [PostController::class, 'modify']);
+Route::put('/game/{post:slug}/update', [PostController::class, 'update']);
+Route::get('/download/{post:slug}', [\App\Http\Controllers\UserDownloadGames::class, 'store']);
+Route::put('/game/{post:slug}/like', [PostController::class, 'like'])->middleware('auth');
+Route::put('/game/{post:slug}/unlike', [PostController::class, 'unlike'])->middleware('auth');
 
 Route::get('game/posts/create', [PostController::class, 'create'])->middleware('notban');
 Route::post('game/posts', [PostController::class, 'store'])->middleware('auth');
@@ -37,3 +42,6 @@ Route::put('/{user:username}/setAdmin', [\App\Http\Controllers\UserController::c
 Route::put('/{user:username}/removeAdmin', [\App\Http\Controllers\UserController::class, 'removeAdmin'])->middleware('admin');
 Route::put('/{user:username}/Ban', [\App\Http\Controllers\UserController::class, 'ban'])->middleware('admin');
 Route::put('/{user:username}/Unban', [\App\Http\Controllers\UserController::class, 'unban'])->middleware('admin');
+
+//API
+Route::apiResource('api/user', \App\Http\Controllers\API\UserController::class);

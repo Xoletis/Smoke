@@ -1,7 +1,7 @@
 @props(['post'])
 
 <article
-    {{ $attributes->merge(['class'=>'transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
+    {{ $attributes->merge(['class'=>'transition-colors duration-300 hover:bg-gray-900 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl']) }}>
     <div class="py-6 px-5">
         <div>
             <img src="{{ $post->image }}" alt="{{ $post->title }} illustration" class="rounded-xl">
@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="mt-4">
-                    <h1 class="text-3xl">
+                    <h1 class="text-3xl" style="color: white">
                         {!! $post->title !!}
                     </h1>
 
@@ -24,12 +24,12 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4">
+            <div class="text-sm mt-4 text-white">
                 <p>
                     {!! $post->excerpt !!}
                 </p>
                 <br>
-                <p> Téléchargé {{ $post->nbDownload }} fois</p>
+                <p> Téléchargé {{ $post->nbDownload }} fois et aimer {{ $post->nbLike }} fois</p>
             </div>
 
             <footer class="flex justify-between items-center mt-8">
@@ -48,11 +48,18 @@
                 </div>
                 @auth
                     @if(auth()->user()->name == $post->author->name or auth()->user()->isAdmin == "1")
-                        <form method="POST" action="/post/{{$post->slug}}" class="bg-red-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
-                            @method('DELETE')
-                            @csrf
-                            <button type="submit">Supprimer</button>
-                        </form>
+                        <div style="flex-direction: row-reverse">
+                            <form method="POST" action="/post/{{$post->slug}}" class="bg-red-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5 mb-2">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit">Supprimer</button>
+                            </form>
+                            <form method="POST" action="/post/{{$post->slug}}/modify" class="bg-gray-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                                @method('PUT')
+                                @csrf
+                                <button type="submit">Modifier</button>
+                            </form>
+                        </div>
                     @endif
                 @endauth
             </footer>

@@ -24,6 +24,8 @@ class CreatePostsTable extends Migration
             $table->string('image')->nullable();
             $table->string('link');
             $table->integer('nbDownload')->startingValue(0);
+            $table->integer('nbLike')->startingValue(0);
+            $table->integer('nbDislike')->startingValue(0);
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

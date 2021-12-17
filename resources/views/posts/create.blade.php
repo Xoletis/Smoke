@@ -1,13 +1,13 @@
 <x-layout>
     <section class="py-8 max-w-md mx-auto">
-        <h1 class="text-lg font-bold mb-4">
+        <h1 class="text-lg font-bold mb-4 text-white">
             Publier un nouveau jeu
         </h1>
         <x-panel>
             <form method="POST" action="/game/posts">
                 @csrf
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-blod text-xs text-white"
                            for="title"
                     >
                         Nom du jeu
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-blod text-xs text-white""
                            for="slug"
                     >
                         lien dans le site
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-blod text-xs text-white""
                            for="image"
                     >
                         Image du jeu
@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-bold text-xs text-white""
                            for="excerpt"
                     >
                         Présentation
@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-bold text-xs text-white""
                            for="descritption"
                     >
                         Description
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-blod text-xs text-white""
                            for="category_id"
                     >
                         Catégorie
@@ -121,7 +121,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label class="block mb-2 uppercase font-blod text-xs text-gray-700"
+                    <label class="block mb-2 uppercase font-blod text-xs text-white""
                            for="link"
                     >
                         lien de téléchargement du jeu

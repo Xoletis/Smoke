@@ -1,5 +1,5 @@
 <x-layout>
-    <body style="font-family: Open Sans, sans-serif">
+    <body style="font-family: Open Sans, sans-serif;">
     <section class="px-6 py-8">
 
         <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
@@ -11,15 +11,40 @@
                         Publié <time>{{ $post->created_at->diffForHumans() }}</time>
                     </p>
 
-                    <div class="flex items-center lg:justify-center text-sm mt-4">
+                    <div class="flex items-center lg:justify-center text-sm mt-4" style="color: white">
                         <div class="ml-3 text-left">
                             {{ $post->author->username }}
                         </div>
                     </div>
-                    <h6>Téléchargé {{ $post->nbDownload }} fois</h6>
+                    <h6 style="color: white">Téléchargé {{ $post->nbDownload }} fois</h6>
+
+                    <div style="color: white">
+                    @auth()
+                        @if(\App\Models\UserLikeGames::userPost($post, auth()->user()) == false)
+                            <form method="POST" action="/game/{{ $post->slug }}/like">
+                                @method('PUT')
+                                @csrf
+                                <button type="submit"><img src="/images/PouceNonMis.png", height="30", width="30" alt="PouceNonMis", class="mt-5"/></button>
+                            </form>
+                        @else
+                            <form method="POST" action="/game/{{ $post->slug }}/unlike">
+                                @method('PUT')
+                                @csrf
+                                <button type="submit"><img src="/images/PouceMis.png", height="30", width="30" alt="PouceNonMis", class="mt-5"/></button>
+                            </form>
+                        @endif
+                    @else
+                        <div>
+                            <form method="GET" action="/register">
+                                @csrf
+                                <button type="submit"><img src="/images/PouceNonMis.png", height="30", width="30" alt="PouceNonMis", class="mt-5"/></button>
+                            </form>
+                    @endauth
+                        {{ $post->nbLike }}
+                        </div>
                 </div>
 
-                <div class="col-span-8">
+                <div class="col-span-8" style="color: white">
                     <div class="hidden lg:flex justify-between mb-6">
                         <a href="/"
                            class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
@@ -43,11 +68,15 @@
                         {!! $post->title !!}
                     </h1>
 
+                    @auth()
                     <form action="/download/{{$post->slug}}", method="POST">
                         @method('PUT')
                         @csrf
                         <button type="submit">Lien de téléchargement</button>
                     </form>
+                    @else
+                        <a href="{{$post->link}}">Lien de téléchargement</a>
+                    @endauth
                     <br>
                     <br>
 
@@ -63,12 +92,12 @@
                             @if(auth()->user()->isBan == 0)
                                 <form method="POST" action="/posts/{{ $post->slug }}/comments" class="border border-gray-200 p-6 rounded-xl mb-6">
                                     @csrf
-                                    <header>
+                                    <header style="color: white">
                                         <h2>Vous voulez participez ?</h2>
                                     </header>
 
                                     <div class="mt-4">
-                                        <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Commentez"></textarea>
+                                        <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Commentez" style="background: #16202D"></textarea>
                                     </div>
 
                                     <div class="flex justify-end mt-10 border-t border-gray-200 pt-6">

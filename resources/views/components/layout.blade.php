@@ -5,12 +5,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-<body style="font-family: Open Sans, sans-serif">
+<body style="font-family: Open Sans, sans-serif; background-color: #1B2838">
 <section class="px-6 py-8">
     <nav class="md:flex md:justify-between md:items-center">
         <div>
             <a href="/">
-                <img src="/images/Logo.png" alt="Laracasts Logo" width="165" height="16">
+                <img src="/images/Logo.png" alt="Smoke Logo" width="117" height="12">
             </a>
         </div>
 
